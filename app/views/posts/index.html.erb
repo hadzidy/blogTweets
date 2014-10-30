@@ -1,0 +1,7 @@
+<% @posts.each do |p| %>
+
+<%= link_to "Post #{p.id}", post_path(p) %>
+<% end %>
+
+<%= link_to "Create new post", new_post_path %>
+
