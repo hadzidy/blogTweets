@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all 
+		@posts = Post.all.paginate(page: params[:page])
 	end
 	def show
 		@post = Post.find(params[:id])
@@ -22,9 +22,11 @@ class PostsController < ApplicationController
 	def create
 	  @post = Post.new(post_params)
 	  if @post.save
+	  	flash[:success] = "Post creado exitosamente"
 	   redirect_to posts_path
 	  else
-	   render new
+	  	flash[:success] = "Post fail"
+	   render 'new'
 	  end
 	 end
 	private

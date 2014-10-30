@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+100.times do 
+ post = Post.new(:tweet=>"mi tweet", :latitud=>"374", :longitud=>"3943", :url=>"facebook.com")
+ post.save
+end
