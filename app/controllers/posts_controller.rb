@@ -32,6 +32,6 @@ class PostsController < ApplicationController
 	 end
 	private
 	def post_params
-		params.require(:post).permit(:tweet,:latitud,:longitud,:url)
+		params.require(:post).permit(:tweet,:url)
 	end
 end
