@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 	end
 	def create
 	  @post = Post.new(post_params)
+	  @post.address = request.remote_ip
 	  if @post.save
 	  	flash[:success] = "Post creado exitosamente"
 	   redirect_to posts_path

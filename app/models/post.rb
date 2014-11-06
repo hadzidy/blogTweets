@@ -1,3 +1,5 @@
 class Post < ActiveRecord::Base
-	validates_presence_of :tweet, :latitud, :longitud
+	after_validation :geocode
+ 		geocoded_by :address
+	validates_presence_of :tweet
 end

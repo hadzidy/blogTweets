@@ -2,8 +2,8 @@ class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       t.string :tweet
-      t.string :latitud
-      t.string :longitud
+      t.float :latitude
+      t.float :longitude
       t.string :url
 
       t.timestamps

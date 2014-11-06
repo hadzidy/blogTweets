@@ -32,6 +32,12 @@ group :production do
    gem 'pg'
 end
 
+group :environment do
+   gem 'sqlite3'
+end
+
+gem 'geocoder'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

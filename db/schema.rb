@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002025653) do
+ActiveRecord::Schema.define(version: 20141106043104) do
 
   create_table "posts", force: true do |t|
     t.string   "tweet"
-    t.string   "latitud"
-    t.string   "longitud"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address"
   end
 
 end

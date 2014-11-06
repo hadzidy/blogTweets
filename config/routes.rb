@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'map/index'
+
+  get 'map/view'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,6 +17,10 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
      resources :posts
+
+     get 'ubicacion' => 'map#index'
+     get 'map' => 'map#index'
+     get 'map/:id' => 'map#view'
 
   # Example resource route with options:
   #   resources :products do
