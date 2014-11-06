@@ -32,9 +32,9 @@ group :production do
    gem 'pg'
 end
 
-group :environment do
-   gem 'sqlite3'
-end
+#group :environment do
+#   gem 'sqlite3'
+#end
 
 gem 'geocoder'
 
