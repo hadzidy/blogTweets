@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 gem 'will_paginate', '~> 3.0.7'
 
-gem 'pg', '~> 0.17.1'
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
