@@ -22,7 +22,9 @@
         var lat_long = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
         var marker = new google.maps.Marker({
             position: lat_long,
-            map: map
+            map: map,
+            title: "Tweet",
+
         });
     }
 
