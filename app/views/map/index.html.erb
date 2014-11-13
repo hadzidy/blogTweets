@@ -12,19 +12,19 @@
     var markers=[];
 
 	<% @ubicaciones.each do |p| %>
-	  var marker = { latitude: "<%= p.latitude %>", longitude: "<%= p.longitude %>" }
+	  var marker = { latitude: parseFloat("<%= p.latitude %>"), longitude: parseFloat( "<%= p.longitude %>") }
 	  markers.push(marker);
 	<% end %>
 	 	console.log(markers)
 
 
-	 	for (var i = 0; i < markers.length; i++) {
-            var lat_long = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
-            var marker = new google.maps.Marker({
-                position: lat_long,
-                map: map
-            });
-        }
+ 	for (var i = 0; i < markers.length; i++) {
+        var lat_long = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
+        var marker = new google.maps.Marker({
+            position: lat_long,
+            map: map
+        });
+    }
 
         
  </script>
