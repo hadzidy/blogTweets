@@ -2,7 +2,7 @@ var map;
 var options = {
     zoom: 6,
     scrollwheel: false,
-    center: new google.maps.LatLng(44.244273, 7.769737),
+    center: new google.maps.LatLng( markers[3].latitude, markers[3].longitude),
     mapTypeId: google.maps.MapTypeId.ROADMAP
 }
 
