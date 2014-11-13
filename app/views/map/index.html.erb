@@ -1,4 +1,31 @@
 <% @ubicaciones.each do |p| %>
-
 <%= link_to "Ubicación #{p.id}" %>
 <% end %>
+<div id="map"></div>
+
+
+<script type="text/javascript" >
+    $(document).ready(function() {
+  		mapa.init();
+ 	});
+
+    var markers=[];
+
+	<% @ubicaciones.each do |p| %>
+	  var marker = { latitude: "<%= p.latitude %>", longitude: "<%= p.longitude %>" }
+	  markers.push(marker);
+	<% end %>
+	 	console.log(markers)
+
+
+	 	for (var i = 0; i < markers.length; i++) {
+            var lat_long = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
+            var marker = new google.maps.Marker({
+                position: lat_long,
+                map: map
+            });
+        }
+
+        
+ </script>
+
