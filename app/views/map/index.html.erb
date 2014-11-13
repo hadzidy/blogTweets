@@ -5,28 +5,22 @@
 
 
 <script type="text/javascript" >
-    $(document).ready(function() {
-  		mapa.init();
- 	
-
     var markers=[];
+ <% @ubicaciones.each do |p| %>
+  var marker = { latitude: parseFloat("<%= p.latitude %>"), longitude: parseFloat("<%= p.longitude %>") }
+  markers.push(marker);
+ <% end %>
+ $(document).ready(function() {
+  for (var i = 0; i < markers.length; i++) {
+            var latlng = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map
+            });
+        };
+  mapa.init();
+ });
 
-	<% @ubicaciones.each do |p| %>
-	  var marker = { latitude: parseFloat("<%= p.latitude %>"), longitude: parseFloat( "<%= p.longitude %>") }
-	  markers.push(marker);
-	<% end %>
-	 	console.log(markers)
-
-
- 	for (var i = 0; i < markers.length; i++) {
-        var lat_long = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
-        var marker = new google.maps.Marker({
-            position: lat_long,
-            map: map
-        });
-    }
-
-    });
 
         
  </script>
