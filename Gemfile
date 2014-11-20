@@ -28,13 +28,13 @@ gem 'spring',        group: :development
 
 gem 'will_paginate', '~> 3.0.7'
 
-group :production do
-   gem 'pg'
-end
-
-#group :environment do
-#   gem 'sqlite3'
+#group :production do
+#   gem 'pg'
 #end
+
+group :environment do
+   gem 'sqlite3'
+end
 
 gem 'geocoder'
 

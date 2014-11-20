@@ -11,16 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106043104) do
+ActiveRecord::Schema.define(version: 20141120031716) do
+
+  create_table "hashtags", force: true do |t|
+    t.string   "hashtag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "tweet"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "url"
+    t.string   "address"
+    t.integer  "hashtag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "address"
   end
 
 end

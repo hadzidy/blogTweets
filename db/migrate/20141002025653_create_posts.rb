@@ -5,6 +5,8 @@ class CreatePosts < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.string :url
+      t.string :address
+      t.integer :hashtag_id
 
       t.timestamps
     end
